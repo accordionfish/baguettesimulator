@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta charset="UTF-8">
+  <title></title>
+  
+  
+
+  <style>
+    
+body { 
+  background:url(https://accordionfish.github.io/zipchat/baguette_bg.png);
+        background-repeat: repeat;
+        background-size:150px;
+        animation: marquee 10s infinite linear;
+    }
+#garf {
+  position:absolute;
+  left:20px;
+  z-index:1;
+}
+#baguette {
+  position:absolute;left:450px;
+  z-index:4;
+} 
+    @keyframes marquee {
+        0% {
+            background-position: 1% 0;
+        }
+        100% {
+            background-position: 71% 0;
+        }
+    }
+    
+}
+  </style>
+</head>
+
+<body>
+  <link rel="stylesheet" href="https://unpkg.com/98.css">
+<h1 style="text-align:center;color:white;font-family:Comic Sans MS;font-size:40px"> baguette simulator</h1>
+<img src="https://letsgetvisualvisual.files.wordpress.com/2012/03/wide-eyed.jpg" height="100px" style="z-index: 1; transform: scale(-1, 1); left: 410px;" id="garf">
+<img src="https://pngimg.com/d/baguette_PNG31.png" height="50px" id="baguette" onclick="garf()" hidden="">
+<center><img id="win" src="https://barrarchiverio.7m.pl/p/error/xp.png.php?icon=bubble_i&amp;style=xp&amp;bstyle=classic&amp;title=Congratulations!&amp;close=x&amp;text=You+Win!&amp;b1=&amp;b2=&amp;b3=" style="position: relative; z-index: 5; display: block;"></center>
+  <script>
+var garfleft = 20;
+var garff = document.getElementById("garf");
+var baguette = document.getElementById("baguette")
+function garf(){
+  garff.src= "https://letsgetvisualvisual.files.wordpress.com/2012/03/wide-eyed.jpg";
+  garff.style.transform="scale(-1,1)";
+  garff.style.left=
+  setInterval(()=>{
+    if(!(garfleft > 400)){
+    garff.style.left = (garfleft +10).toString() + "px";
+    garfleft+=10;
+    } else {
+      baguette.hidden="true";
+      document.querySelector("#win").style.display = "block";
+    }
+  },300)
+}
+</script>
+
+
+</body></html>
